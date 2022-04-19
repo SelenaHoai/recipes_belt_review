@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/**************** Index Page ****************/
+.register-form {
+    width: 320px;
+    height: 90%;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.login-form {
+    width: 320px;
+    height: 90%;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/**************** Dashboard Page ****************/
+.logout-btn {
+    width: 70px;
+    height: 40px;
+    color: white;
+    background-color: rgb(4, 109, 74);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10%;
+    padding: 5px 0;
+}
+
+.main {
+    width: 90%;
+}
+
+/**************** Recipe Page ****************/
+
+
+/**************** Recipe New Page ****************/
+
+#description {
+    width: 300px;
+    height: 100px;
+}
+
+#instruction {
+    width: 300px;
+    height: 100px;
+}
+
+/**************** Recipe Edit Page ****************/
