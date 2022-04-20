@@ -21,28 +21,36 @@
                 <a type="button" class="bg-sucess bg-opacity-75" href="/logout">Logout</a>
             </div>
         </div>
-        <div class="main mt-5">
-        <div>
-            <form action="/recipes/update/{recipe.id}" method="post" class="welcome d-flex justify-content-between">
+        <div class="main mt-5 edit-size">
+            <form action="/recipes/update/{{recipe.id}}" method="post" class="welcome d-flex justify-content-between">
                 <div>
                     <p><label for="name">Name:</label></p>
-                    <p><input type="text" name="name" id="name"></p>
+                    <p><input type="text" name="name" id="name" value="{{recipe.name}}"></p>
             
                     <p><label for="description">Description:</label></p>
-                    <p><textarea type="text" name="description" id="description"></textarea></p>
+                    <p><textarea type="text" name="description" id="description">{{recipe.description}}</textarea></p>
             
                     <p><label for="instruction">Instruction:</label></p>
-                    <p><textarea type="text" name="instruction" id="instruction"></textarea></p>
+                    <p><textarea type="text" name="instruction" id="instruction">{{recipe.instruction}}</textarea></p>
             
                     <br>
-                    <button class="btn btn-success" type="submit">Create</button>
+                    <button class="btn btn-success" type="submit">Update</button>
                 </div>
                 <div>
                     <label class="control-label" for="date">Date Made On:</label>
-                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                    <input class="form-control" id="date" name="date_made_on" type="date" value="{{recipe.date_made_on}}">
                     <div class="mt-4">
                         <label class="control-label" for="date">Under 30 Minutes?</label>
-                        <p><input type="radio" name="time"> Yes <input type="radio" name="time"> No</p>
+                        <p>
+                            
+                            {% if recipe.time == "yes" %}
+                            <input checked type="radio" value="yes" name="time"> Yes <input type="radio" value="no" name="time"> No
+                            {% else %}
+                            <input type="radio" value="yes" name="time"> Yes <input checked type="radio" value="no" name="time"> No
+                            {% endif %}
+
+                        
+                        </p>
                     </div>
                 </div>
             </form>
