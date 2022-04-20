@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
 }
+
+
 /**************** Index Page ****************/
 .register-form {
     width: 320px;
@@ -30,7 +32,7 @@
 }
 
 .main {
-    width: 90%;
+    width: 80%;
 }
 
 /**************** Recipe Page ****************/
@@ -38,14 +40,35 @@
 
 /**************** Recipe New Page ****************/
 
+#name {
+    padding: 2px;
+}
+
 #description {
     width: 300px;
     height: 100px;
+    padding: 2px;
 }
 
 #instruction {
     width: 300px;
     height: 100px;
+    padding: 2px;
 }
 
 /**************** Recipe Edit Page ****************/
+
+.edit-size {
+    width: 90%;
+}
+
+/**************** Instructions Page ****************/
+
+.instruction-size {
+    width: 70%;
+    padding: 5px;
+}
+
+.box-margin {
+    padding: 5px;
+}

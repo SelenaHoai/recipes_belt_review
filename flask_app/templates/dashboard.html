@@ -29,18 +29,23 @@
                         <th>Name</th>
                         <th>Under 30 Minutes?</th>
                         <th>Actions</th>
+                        <th>Published By</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for recipe in all_users %}
+                    {% for recipe in all_recipes %}
                     <tr>
                     <td>{{ recipe.name }}</td>
                     <td>{{ recipe.time }}</td>
                     <td>
                         <a href="/recipes/{{recipe.id}}">view instructions</a>
+
+                        {% if user.id == recipe.user_id %}
                         <a href="/recipes/edit/{{recipe.id}}">edit</a>
                         <a href="/recipes/delete/{{recipe.id}}">delete</a>
+                        {% endif %}
                     </td>
+                    <td>{{ recipe.owner.fullname }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

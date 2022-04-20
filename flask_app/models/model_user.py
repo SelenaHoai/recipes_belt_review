@@ -100,12 +100,12 @@ class User:
     def validator(form_data:dict):
             is_valid = True
 
-            if len(form_data['first_name']) > 2:
+            if len(form_data['first_name']) < 2:
                 # session['first_name'] = "first_name is required!"
                 flash("First name is required!", 'err_first_name')
                 is_valid = False
 
-            if len(form_data['last_name']) > 2:
+            if len(form_data['last_name']) < 2:
                 # session['last_name'] = "last_name is required!"
                 flash("Last name is required!", 'err_last_name')
                 is_valid = False
@@ -136,7 +136,7 @@ class User:
     def validator_login(form_data:dict):
         is_valid = True
 
-        if len(form_data['email']) > 2:
+        if len(form_data['email']) < 2:
             # session['email'] = "email is required!"
             flash("Email is required!", 'err_email_login')
             is_valid = False

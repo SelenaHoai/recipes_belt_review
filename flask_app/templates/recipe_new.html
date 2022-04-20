@@ -27,21 +27,34 @@
                     <div>
                         <p><label for="name">Name:</label></p>
                         <p><input type="text" name="name" id="name"></p>
-            
+                        {% for message in get_flashed_messages(category_filter=["err_name"]) %}
+                        <p class="alert alert-danger">{{ message }}</p>
+                        {% endfor %}            
                         <p><label for="description">Description:</label></p>
                         <p><textarea type="text" name="description" id="description"></textarea></p>
-            
-                        <p><label for="instruction">Instruction:</label></p>
+                        {% for message in get_flashed_messages(category_filter=["err_description"]) %}
+                        <p class="alert alert-danger">{{ message }}</p>
+                        {% endfor %}            
+                        <p><label for="instruction">Instructions:</label></p>
                         <p><textarea type="text" name="instruction" id="instruction"></textarea></p>                                
+                        {% for message in get_flashed_messages(category_filter=["err_description"]) %}
+                        <p class="alert alert-danger">{{ message }}</p>
+                        {% endfor %}
                         <br>
                         <button class="btn btn-success" type="submit">Create</button>
                     </div>
                     <div>
-                        <label class="control-label" for="date">Date Made On:</label>
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                        <label class="control-label" for="date_made_on">Date Made On:</label>
+                        <input class="form-control" id="date" name="date_made_on" placeholder="MM/DD/YYY" type="date">
+                        {% for message in get_flashed_messages(category_filter=["err_date_made_on"]) %}
+                        <p class="alert alert-danger">{{ message }}</p>
+                        {% endfor %}
                         <div class="mt-4">
-                            <label class="control-label" for="date">Under 30 Minutes?</label>
+                            <label class="control-label" for="time">Under 30 Minutes?</label>
                             <p><input type="radio" name="time" value="yes"> Yes <input type="radio" name="time" value="no"> No</p>
+                            {% for message in get_flashed_messages(category_filter=["err_time"]) %}
+                            <p class="alert alert-danger">{{ message }}</p>
+                            {% endfor %}
                         </div>
                     </div>
                 </form>
